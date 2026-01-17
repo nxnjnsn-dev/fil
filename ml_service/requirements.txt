@@ -1,0 +1,38 @@
+# Build dependencies (install first)
+setuptools>=69.0.0
+wheel>=0.42.0
+pip>=24.0
+gunicorn==20.1.0
+
+# FastAPI and ASGI server
+fastapi==0.115.0
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pydantic==2.10.4
+pydantic-settings==2.1.0
+
+# REMOVED for memory optimization (512MB limit):
+# sentence-transformers==3.3.1   # ~150MB RAM - semantic search disabled
+# spacy>=3.7.0,<4.0.0            # ~80MB RAM - using regex PII detection instead
+
+# NLP and text processing (lightweight)
+nltk==3.8.1
+
+# Image processing (compatible with Python 3.11)
+pillow>=10.0.0
+
+# Data processing - use lighter numpy
+numpy>=1.24.0,<2.0.0
+
+# HTTP client
+httpx==0.25.2
+aiohttp==3.9.1
+
+# Utilities
+python-dotenv==1.0.0
+
+# OCR via cloud API (no local Tesseract needed)
+# Uses OCR.space API - set OCR_SPACE_API_KEY env variable
+
+# Summarization with Gemini API (cloud-based, no local memory needed)
+google-generativeai>=0.3.0
